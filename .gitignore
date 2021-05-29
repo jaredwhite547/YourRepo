@@ -1,0 +1,8 @@
+build/
+
+#Generated with -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+compile_commands.json
+
+#User CMake files
+.cache/
+CMakeFiles
