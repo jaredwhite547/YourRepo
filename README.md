@@ -1,3 +1,6 @@
+#Things to replace:
+YourProject with your project name
+MathLib with your project name
 
 There are three use cases: @@TODO
 
