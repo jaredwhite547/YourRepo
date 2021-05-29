@@ -48,10 +48,10 @@ cd YourProject
 cmake -S . -B build
 ```
 
-    1 The default build type is Debug. To change it for single-configuration generators (everything but Xcode and Visual Studio), append the following to the `cmake -S . -B build` command:
+   - The default build type is Debug. To change it for single-configuration generators (everything but Xcode and Visual Studio), append the following to the `cmake -S . -B build` command:
 ``` -DCMAKE_BUILD_TYPE=BUILD_TYPE```  
 Where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`.  
-* * To disable building the tests, append ` -DBUILD_TESTING=OFF` to the `cmake -S . -B build` command.
+     - To disable building the tests, append ` -DBUILD_TESTING=OFF` to the `cmake -S . -B build` command.
 
 4. Build the main executable/library:
 ```
