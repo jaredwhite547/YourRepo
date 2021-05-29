@@ -2,4 +2,53 @@
   
 # YourProject
 A tldr of your project. Something like:  
-### [YourProject] is a [MIT/GPL/whatever]-Licensed C++14 [application/library/thing] for [doing something awesome].
+### [YourProject] is a cross platform [MIT/GPL/whatever]-Licensed C++14 [application/library/thing] for [doing something awesome].
+
+# Table of Contents
+1. [Introduction](#introduction)
+2. [Dependencies](#dependencies)
+3. [Building, Testing, & Installation](#building_testing_installing)
+    1. [On Boise State's R2](#building_testing_installing_on_r2)
+    2. [On a normal machine](#building_testing_installing_on_a_normal_machine)
+4. [Running]
+5. [Libraries Used]
+
+<a name="introduction"></a>
+# Introduction
+
+<a name="dependencies"></a>
+# Dependencies
+* CMake 3.14 or newer
+* A C++14 capable compiler
+* (Optional) Doxygen, for building documentation.
+
+<a name="building_testing_installing"></a>
+# Building, Testing, & Installing
+<a name="building_testing_installing_on_r2"></a>
+## On Boise State's R2
+Load the the required modules:
+```module load cmake gcc```
+Follow the steps for [on a normal machine](#building_tesitng_installing_on_a_normal_machine)
+
+<a name="building_testing_installing_on_a_normal_machine"></a>
+## On a normal machine
+Clone the repository: 
+```git clone git@github.com:BoiseState-AdaptLab/YourProject.git```
+
+`cd` into the directory:
+```cd YourProject```
+
+Generate the build files:
+```cmake -S . -B build```
+
+The default build type is Debug. To change it for single-configuration generators (everything but Xcode and Visual Studio), append the following to the `cmake -S . -B build` command:
+``` -DCMAKE_BUILD_TYPE=BUILD_TYPE```
+Where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`.
+
+To disable building the tests, append ` -DBUILD_TESTING=OFF` to the `cmake -S . -B build` command.
+
+Build the main executable/library:
+```cmake --build build```
+For multi-configuration generators(only Xcode and Visual Studio), the build type can be selected by appending the following to the `cmake --build build` command:
+```--config BUILD_TYPE```
+Where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`.
