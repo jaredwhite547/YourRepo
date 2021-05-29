@@ -48,16 +48,16 @@ cd YourProject
 cmake -S . -B build
 ```
 
-   - The default build type is Debug. To change it for single-configuration generators (everything but Xcode and Visual Studio), append the following to the `cmake -S . -B build` command:
+   - The default build type is Debug. To change it for single-configuration generators (everything but Xcode and Visual Studio), append the following to the `cmake -S . -B build` command:  
 ``` -DCMAKE_BUILD_TYPE=BUILD_TYPE```  
 Where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`.  
-     - To disable building the tests, append ` -DBUILD_TESTING=OFF` to the `cmake -S . -B build` command.
+     To disable building the tests, append ` -DBUILD_TESTING=OFF` to the `cmake -S . -B build` command.
 
 4. Build the main executable/library:
 ```
 cmake --build build
 ```  
-    + For multi-configuration generators(only Xcode and Visual Studio), the build type can be selected by appending the following to the `cmake --build build` command:
+   - For multi-configuration generators(only Xcode and Visual Studio), the build type can be selected by appending the following to the `cmake --build build` command:
 ```--config BUILD_TYPE```  
 Where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`.
 
@@ -67,16 +67,22 @@ cmake --build build -t test
 ```  
 
 
-6. Building the docs (requires Doxygen):  
+6. (Optional) Building the docs (requires Doxygen):  
 ```
 cmake --build build -t docs
 ```  
 The html files can be found in `build/html`. Open the `build/html/index.html` file with your preferred browser to view them.
 
+7. (Optional) Installation
+Note: This step is not required. It is for those who would like to install YourProject system-wide. The install location defaults to `/usr/local` or `c:/Program Files/YourProject`, and can be overridden by setting `CMAKE_INSTALL_PREFIX` to something else.
+```
+cmake --build build -t install
+```
 
 <a name="running"></a>
 # Running
-After completing the [Building, Testing, & Installing](#building_testing_installing) steps, the binaries are located in `build/bin/`, and the library and archive files in `build/lib/`.
+After completing the [Building, Testing, & Installing](#building_testing_installing) steps, the binaries are located in `build/bin/`, and the library and archive files in `build/lib/`. Examples and documentation are provided below.  
+TODO: Add some examples of running the program!
 
 
 <a name="libraries_used"></a>
