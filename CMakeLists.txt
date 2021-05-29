@@ -43,6 +43,24 @@ message(STATUS "fmt successfully fetched.")
 target_link_libraries(MathUtils-bin PRIVATE fmt)
 
 
+#Check if Doxygen installed
+find_package(Doxygen)
+if(${DOXYGEN_FOUND})
+    #Set the input directory (our include directory)
+    message(STATUS "Doxygen found, docs target enabled")
+    get_target_property(_doxygen_directories MathUtils INCLUDE_DIRECTORIES)
+
+    message(STATUS "Doxygen dirs:" ${_doxygen_directories})
+    doxygen_add_docs(
+        docs
+        ${_doxygen_directories}
+        COMMENT "Building Doxygen docs"
+    )
+else()
+    message(STATUS "Doxygen NOT found, docs target NOT enabled.")
+endif()
+
+
 #=====Tweak build settings=====
 #Set standard to C++14, require it, and turn off extensions (more portable code). Also make the directory structure more traditional (lib stuff in lib, execs in bin)
 set_target_properties(MathUtils PROPERTIES 
