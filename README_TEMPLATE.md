@@ -48,7 +48,7 @@ cd YourProject
 cmake -S . -B build
 ```
 
-    * The default build type is Debug. To change it for single-configuration generators (everything but Xcode and Visual Studio), append the following to the `cmake -S . -B build` command:
+    1 The default build type is Debug. To change it for single-configuration generators (everything but Xcode and Visual Studio), append the following to the `cmake -S . -B build` command:
 ``` -DCMAKE_BUILD_TYPE=BUILD_TYPE```  
 Where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`.  
 * * To disable building the tests, append ` -DBUILD_TESTING=OFF` to the `cmake -S . -B build` command.
@@ -57,7 +57,7 @@ Where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`.
 ```
 cmake --build build
 ```  
-     For multi-configuration generators(only Xcode and Visual Studio), the build type can be selected by appending the following to the `cmake --build build` command:
+    + For multi-configuration generators(only Xcode and Visual Studio), the build type can be selected by appending the following to the `cmake --build build` command:
 ```--config BUILD_TYPE```  
 Where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`.
 
@@ -68,7 +68,9 @@ cmake --build build -t test
 
 
 6. Building the docs (requires Doxygen):  
-```cmake --build build -t docs```  
+```
+cmake --build build -t docs
+```  
 The html files can be found in `build/html`. Open the `build/html/index.html` file with your preferred browser to view them.
 
 
