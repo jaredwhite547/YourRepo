@@ -12,6 +12,7 @@ A tldr of your project. Something like:
     2. [On a normal machine](#building_testing_installing_on_a_normal_machine)
 4. [Running](#running)
 5. [Libraries Used](#libraries_used)
+6. [Contributors](#contributors)
 
 <a name="introduction"></a>
 # Introduction
@@ -33,17 +34,17 @@ Follow the steps for [on a normal machine](#building_tesitng_installing_on_a_nor
 
 <a name="building_testing_installing_on_a_normal_machine"></a>
 ## On a normal machine
-1. Clone the repository:   
+1. ### Clone the repository:   
 ```
 git clone git@github.com:BoiseState-AdaptLab/YourProject.git
 ```
 
-2. `cd` into the directory:  
+2. ### `cd` into the directory:  
 ```
 cd YourProject
 ```
 
-3. Generate the build files:  
+3. ### Generate the build files:  
 ```
 cmake -S . -B build
 ```
@@ -53,7 +54,7 @@ cmake -S . -B build
 Where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`.  
      To disable building the tests, append ` -DBUILD_TESTING=OFF` to the `cmake -S . -B build` command.
 
-4. Build the main executable/library:
+4. ### Build the main executable/library:
 ```
 cmake --build build
 ```  
@@ -61,20 +62,20 @@ cmake --build build
 ```--config BUILD_TYPE```  
 Where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`.
 
-5. Running the tests:  
+5. ### Running the tests:  
 ```
 cmake --build build -t test
 ```  
 
 
-6. (Optional) Building the docs (requires Doxygen):  
+6. ### (Optional) Building the docs (requires Doxygen):  
 ```
 cmake --build build -t docs
 ```  
 The html files can be found in `build/html`. Open the `build/html/index.html` file with your preferred browser to view them.
 
-7. (Optional) Installation
-Note: This step is not required. It is for those who would like to install YourProject system-wide. The install location defaults to `/usr/local` or `c:/Program Files/YourProject`, and can be overridden by setting `CMAKE_INSTALL_PREFIX` to something else.
+7. ### (Optional) Installation
+__Note: This step is not required. It is for those who would like to install YourProject system-wide.__ The install location defaults to `/usr/local` or `c:/Program Files/YourProject`, and can be overridden by setting `CMAKE_INSTALL_PREFIX` to something else.
 ```
 cmake --build build -t install
 ```
@@ -89,3 +90,8 @@ TODO: Add some examples of running the program!
 # Libraries Used
 * [{fmt}](https://github.com/fmtlib/fmt)
 * [doctest](https://github.com/onqtam/doctest/)
+
+<a name="contributors"></a>
+# Contributors
+* Add your name here!
+* CMake Base Project: Jared White @@TODO
