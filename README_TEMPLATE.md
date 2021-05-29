@@ -34,22 +34,30 @@ Follow the steps for [on a normal machine](#building_tesitng_installing_on_a_nor
 <a name="building_testing_installing_on_a_normal_machine"></a>
 ## On a normal machine
 1. Clone the repository:   
-```git clone git@github.com:BoiseState-AdaptLab/YourProject.git```
+```
+git clone git@github.com:BoiseState-AdaptLab/YourProject.git
+```
 
 2. `cd` into the directory:  
-```cd YourProject```
+```
+cd YourProject
+```
 
 3. Generate the build files:  
-```cmake -S . -B build```
+```
+cmake -S . -B build
+```
 
-* The default build type is Debug. To change it for single-configuration generators (everything but Xcode and Visual Studio), append the following to the `cmake -S . -B build` command:
+    * The default build type is Debug. To change it for single-configuration generators (everything but Xcode and Visual Studio), append the following to the `cmake -S . -B build` command:
 ``` -DCMAKE_BUILD_TYPE=BUILD_TYPE```  
 Where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`.  
-* To disable building the tests, append ` -DBUILD_TESTING=OFF` to the `cmake -S . -B build` command.
+* * To disable building the tests, append ` -DBUILD_TESTING=OFF` to the `cmake -S . -B build` command.
 
 4. Build the main executable/library:
-```cmake --build build```  
-* For multi-configuration generators(only Xcode and Visual Studio), the build type can be selected by appending the following to the `cmake --build build` command:
+```
+cmake --build build
+```  
+     For multi-configuration generators(only Xcode and Visual Studio), the build type can be selected by appending the following to the `cmake --build build` command:
 ```--config BUILD_TYPE```  
 Where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`.
 
@@ -57,7 +65,7 @@ Where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`.
 ```
 cmake --build build -t test
 ```  
-@@TODO
+
 
 6. Building the docs (requires Doxygen):  
 ```cmake --build build -t docs```  
