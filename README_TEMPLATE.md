@@ -39,36 +39,37 @@ Follow the steps for [on a normal machine](#building_tesitng_installing_on_a_nor
 2. `cd` into the directory:  
 ```cd YourProject```
 
-Generate the build files:  
+3. Generate the build files:  
 ```cmake -S . -B build```
 
-The default build type is Debug. To change it for single-configuration generators (everything but Xcode and Visual Studio), append the following to the `cmake -S . -B build` command:
+* The default build type is Debug. To change it for single-configuration generators (everything but Xcode and Visual Studio), append the following to the `cmake -S . -B build` command:
 ``` -DCMAKE_BUILD_TYPE=BUILD_TYPE```  
-Where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`.
+Where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`.  
+* To disable building the tests, append ` -DBUILD_TESTING=OFF` to the `cmake -S . -B build` command.
 
-To disable building the tests, append ` -DBUILD_TESTING=OFF` to the `cmake -S . -B build` command.
-
-Build the main executable/library:
+4. Build the main executable/library:
 ```cmake --build build```  
-For multi-configuration generators(only Xcode and Visual Studio), the build type can be selected by appending the following to the `cmake --build build` command:
+* For multi-configuration generators(only Xcode and Visual Studio), the build type can be selected by appending the following to the `cmake --build build` command:
 ```--config BUILD_TYPE```  
 Where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`.
 
-Running the tests:  
-```cmake --build build -t test```  
+5. Running the tests:  
+```
+cmake --build build -t test
+```  
 @@TODO
 
-Building the docs (requires Doxygen):  
+6. Building the docs (requires Doxygen):  
 ```cmake --build build -t docs```  
 The html files can be found in `build/html`. Open the `build/html/index.html` file with your preferred browser to view them.
 
 
 <a name="running"></a>
-## Running
+# Running
 After completing the [Building, Testing, & Installing](#building_testing_installing) steps, the binaries are located in `build/bin/`, and the library and archive files in `build/lib/`.
 
 
 <a name="libraries_used"></a>
-## Libraries Used
+# Libraries Used
 * [{fmt}](https://github.com/fmtlib/fmt)
 * [doctest](https://github.com/onqtam/doctest/)
