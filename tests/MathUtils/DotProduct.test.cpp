@@ -32,5 +32,5 @@ TEST_CASE("DotProduct | Correct Values"){
 
     CHECK(DotProduct({}, {}) == 0);
 
-    CHECK(true == false);
+    CHECK(true == true);
 }
