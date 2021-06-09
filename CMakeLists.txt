@@ -5,9 +5,10 @@ cmake_minimum_required(VERSION 3.14)
 #Create a new project
 project(MathUtils VERSION 1.0.0 
     #@@TODO replace below with your description
-    DESCRIPTION "MathUtils project"
+    DESCRIPTION "A simple CMake example project that computes the dot product of two vectors."
     LANGUAGES CXX
 )
+
 
 
 #=====Declare Targets=====
@@ -20,14 +21,8 @@ add_executable(MathUtils-bin)
 set_target_properties(MathUtils-bin PROPERTIES OUTPUT_NAME MathUtils)
 
 
+
 #=====Declare Dependencies=====
-#Make MathUtils-bin (our driver) depend on our library (MathUtils)
-target_link_libraries(MathUtils-bin PRIVATE MathUtils)
-
-#Set the include directory for this library. PUBLIC means this directory is propagated to any targets that link to it.
-target_include_directories(MathUtils PUBLIC include)
-
-
 #Fetch the fmt library
 include(FetchContent)
 message(STATUS "Fetching content: fmt")
@@ -42,23 +37,9 @@ message(STATUS "fmt successfully fetched.")
 #Make it a dependency of the executable (the MathUtils-bin target, not MathUtils)
 target_link_libraries(MathUtils-bin PRIVATE fmt)
 
+#Make MathUtils-bin (our driver) depend on our library (MathUtils)
+target_link_libraries(MathUtils-bin PRIVATE MathUtils)
 
-#Check if Doxygen installed
-find_package(Doxygen)
-if(${DOXYGEN_FOUND})
-    #Set the input directory (our include directory)
-    message(STATUS "Doxygen found, docs target enabled")
-    get_target_property(_doxygen_directories MathUtils INCLUDE_DIRECTORIES)
-
-    message(STATUS "Doxygen dirs:" ${_doxygen_directories})
-    doxygen_add_docs(
-        docs
-        ${_doxygen_directories}
-        COMMENT "Building Doxygen docs"
-    )
-else()
-    message(STATUS "Doxygen NOT found, docs target NOT enabled.")
-endif()
 
 
 #=====Tweak build settings=====
@@ -94,7 +75,7 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     endif()
 
     #If testing wasn't explictly set, enable building it.
-    if(NOT BUILD_TESTING)
+    if(NOT DEFINED BUILD_TESTING)
         message(STATUS "Enabling testing")
         set(BUILD_TESTING ON)
     endif()
@@ -113,12 +94,22 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     target_compile_options(MathUtils-bin PRIVATE ${compiler_warnings})
 endif()
 
+
+#Set the include directory for this library. PUBLIC means this directory is propagated to any targets that link to it.
+target_include_directories(MathUtils
+    PUBLIC include
+    PRIVATE src/MathUtils #Sometimes you will have utility headers that aren't public, and shouldn't be distributed. These go in the src/MathUtils/ directory
+)
+
 #Add source directory
 add_subdirectory(src)
 
-#If this project is being built, and the tests are requested:
+#If this project is being directly built, and the tests are requested:
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
     #Enable testing
+    #Append the `--output-on-failure` argument to the ctest command. This makes the tests show output when they fail.
+    set(CTEST_OUTPUT_ON_FAILURE ON)
+    list(APPEND CMAKE_CTEST_ARGUMENTS "--rerun-failed;--output-on-failure")
     include(CTest)
     add_subdirectory(tests)
 endif()

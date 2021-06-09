@@ -11,6 +11,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(doctest)
 message(STATUS "doctest successfully fetched.")
 
+
 #Add our two test directories
 add_subdirectory(MathUtils)
 add_subdirectory(MathUtils-bin)

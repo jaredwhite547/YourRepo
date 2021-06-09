@@ -1,3 +1,19 @@
+# How to use this example for your own project.
+The project is currently set up to be used as a library and an application
+1. Clone and rename this repo to your project name.
+2. Push it to a new repo, ideally with the same name as your project.
+3. 
+
+
+There are a few bits of functionality missing from this project. This was done to keep the size of this example relatively small. The missing functionality is:
+1. 
+
+@@TODO try these instructions and test them
+
+# How to use this example for a project with no driver/application (library only)
+1. Follow the previous instructions
+2. Delete/comment everything that references MathUtils-bin. 
+
 #Things to replace:
 YourProject with your project name
 MathLib with your project name
