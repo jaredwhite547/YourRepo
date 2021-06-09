@@ -30,3 +30,8 @@ jobs:
       # Run the tests, selecting the configuration if possible.
       run: ctest -C ${{ matrix.build-type }} --output-on-failure
       
+    - name: Test Clang
+      run: clang --version
+
+    - name: Test GCC
+      run: gcc --version
