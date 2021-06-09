@@ -17,17 +17,20 @@ jobs:
     steps:
     - name: Add MSYS64 To Path On Windows #Allows using GCC and Clang on Windows.
       if: runner.os == 'Windows'
-      run: $env:path += ";C:/msys64/mingw64/bin"
-      run: echo "C:/msys64/mingw64/bin" >> $GITHUB_PATH
+      run: |
+        $env:path += ";C:/msys64/mingw64/bin"
+        echo "C:/msys64/mingw64/bin" >> $GITHUB_PATH
 
     - name: Show Path PWSH
       if: runner.os == 'Windows'
-      run: echo "$env:path"
-      run: echo $env:path
+      run: |
+        echo "$env:path"
+        echo $env:path
 
     - name: Show Path PATH
-      run: echo "$PATH"
-      run: echo $PATH
+      run: |
+        echo "$PATH"
+        echo $PATH
       
     - name: Test Clang
       run: clang --version
