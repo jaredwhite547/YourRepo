@@ -28,5 +28,5 @@ jobs:
     - name: Run Tests
       working-directory: ${{ github.workspace }}/build
       # Run the tests, selecting the configuration if possible.
-      run: ctest -C ${{ matrix.build-type }} --verbose
+      run: ctest -C ${{ matrix.build-type }} --output-on-failure
       

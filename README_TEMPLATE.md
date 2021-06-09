@@ -66,9 +66,16 @@ cmake --build build
 Where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`.
 
 5. ### Running the tests:  
+For single-configuration generators(everything **but** Xcode and Visual Studio):
 ```
 cmake --build build -t test
 ```  
+For multi-configuration generators(**only** Xcode and Visual Studio):
+```
+cmake --build build -t RUN_TESTS
+```  
+You may need to select the build type(for multi-configuration generators only). Append `--config BUILD_TYPE`, where `BUILD_TYPE` is `Debug`, `Release`, `RelWithDebInfo`, or `MinSizeRel`. `BUILD_TYPE` should be the same as used in step #4.  
+Note that the test target does not rebuild anything. As a result, you may want to run `cmake --build build` before running the tests after making changes.
 
 <a name="running"></a>
 # Running
