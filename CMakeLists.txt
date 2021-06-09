@@ -108,7 +108,7 @@ add_subdirectory(src)
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
     #Enable testing
     #Append the `--output-on-failure` argument to the ctest command. This makes the tests show output when they fail.
-    list(APPEND CMAKE_CTEST_ARGUMENTS "--output-on-failure")
+    #list(APPEND CMAKE_CTEST_ARGUMENTS "--output-on-failure")
     include(CTest)
     add_subdirectory(tests)
 endif()

@@ -16,7 +16,7 @@ message(STATUS "doctest successfully fetched.")
 add_subdirectory(MathUtils)
 
 #@@TODO This directory tests directly invoking the executable with command line arguments. It is very possible that you don't need or want this functionality. If so, simply remove the below line and folder it references.
-add_subdirectory(MathUtils-bin)
+#add_subdirectory(MathUtils-bin)
 
 
 #This is a bit of magic taken from https://stackoverflow.com/a/63732435
