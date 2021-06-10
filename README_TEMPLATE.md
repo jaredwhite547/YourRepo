@@ -1,6 +1,6 @@
 <p align="center"><img width="45%" src="CoolLogo.png"></p>
+(You need to update the below URL in the markdown file to point at your repository)  
 ![Build](https://github.com/7thfleet/CMake_Example/actions/workflows/main.yml/badge.svg)
-(You need to update the above URL in the markdown file to point at your repository)
   
 # MathUtils
 (A tldr of your project. Something like:)  
