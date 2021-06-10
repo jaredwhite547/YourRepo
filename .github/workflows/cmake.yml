@@ -11,13 +11,13 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        compiler: [gcc, clang, msvc]
+        cxx: [g++, clang++]
         build-type: [Release]
         exclude:
-          - os: [ubuntu-latest, macos-latest]
-            compiler: msvc # Don't build with MSVC on Linux/MacOS
           - os: windows-latest # Don't build with GCC & Clang on Windows
-            compiler: [gcc, clang]
+            cxx: g++
+          - os: windows-latest # Don't build with GCC & Clang on Windows
+            cxx: clang++
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -30,7 +30,7 @@ jobs:
     - name: Generate build files 
       # The -DCMAKE_BUILD_TYPE variable only matters to single-config generators
       env:
-        CC: ${{ matrix.compiler }}
+        CXX: ${{ matrix.cxx }}
       run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{ matrix.build-type }}
 
     - name: Build project
