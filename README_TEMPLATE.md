@@ -1,7 +1,15 @@
 <p align="center"><img width="45%" src="CoolLogo.png"></p>
 (@@TODO You need to update the below URL in the markdown file to point at your repository)
 
-# MathUtils [![Build & Tests](https://github.com/7thfleet/CMake_Example/actions/workflows/main.yml/badge.svg)](https://github.com/7thfleet/CMake_Example/actions/workflows/main.yml)
+# MathUtils 
+[![Linux](https://github.com/7thfleet/CMake_Example/actions/workflows/linux.yml/badge.svg)](https://github.com/7thfleet/CMake_Example/actions/workflows/linux.yml)
+[![Windows](https://github.com/7thfleet/CMake_Example/actions/workflows/windows.yml/badge.svg)](https://github.com/7thfleet/CMake_Example/actions/workflows/windows.yml)
+[![MacOS](https://github.com/7thfleet/CMake_Example/actions/workflows/macos.yml/badge.svg)](https://github.com/7thfleet/CMake_Example/actions/workflows/macos.yml)
+
+
+[![Linux](https://github.com/7thfleet/CMake_Example/actions/workflows/linux.yml/badge.svg)](https://github.com/7thfleet/CMake_Example/actions/workflows/linux.yml)]
+
+[![Linux](https://github.com/7thfleet/CMake_Example/actions/workflows/linux.yml/badge.svg)](https://github.com/7thfleet/CMake_Example/actions/workflows/linux.yml)
 
 (A tldr of your project. Something like:)  
 #### MathUtils is a cross platform CC0 C++14 application & library for generating the dot product of two `std::vector`s.
