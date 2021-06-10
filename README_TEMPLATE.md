@@ -1,4 +1,5 @@
 <p align="center"><img width="45%" src="CoolLogo.png"></p>
+![Build](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
   
 # MathUtils
 (A tldr of your project. Something like:)  
