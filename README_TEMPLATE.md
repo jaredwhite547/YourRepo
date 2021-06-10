@@ -1,11 +1,11 @@
 <p align="center"><img width="45%" src="CoolLogo.png"></p>
-(You need to update the below URL in the markdown file to point at your repository)  
-[![Build & Test Status](https://github.com/7thfleet/CMake_Example/actions/workflows/main.yml/badge.svg)](https://github.com/7thfleet/CMake_Example/actions/workflows/main.yml)
+(You need to update the below URL in the markdown file to point at your repository)
+
+[![Run Tests](https://github.com/7thfleet/CMake_Example/actions/workflows/main.yml/badge.svg)](https://github.com/7thfleet/CMake_Example/actions/workflows/main.yml)
+
 # MathUtils
 (A tldr of your project. Something like:)  
 ### MathUtils is a cross platform CC0 C++14 application & library for generating the dot product of `std::vector`.
-
-[![Run Tests](https://github.com/7thfleet/CMake_Example/actions/workflows/main.yml/badge.svg)](https://github.com/7thfleet/CMake_Example/actions/workflows/main.yml)
 
 # Table of Contents
 1. [Introduction](#introduction)
