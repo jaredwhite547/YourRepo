@@ -4,6 +4,7 @@ The project is currently set up to be used as a library and an application
 2. Push it to a new repo, ideally with the same name as your project.
 3. 
 
+[![Run Tests](https://github.com/7thfleet/CMake_Example/actions/workflows/main.yml/badge.svg)](https://github.com/7thfleet/CMake_Example/actions/workflows/main.yml)
 
 There are a few bits of functionality missing from this project. This was done to keep the size of this example relatively small. The missing functionality is:
 1. 

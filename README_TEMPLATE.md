@@ -5,6 +5,8 @@
 (A tldr of your project. Something like:)  
 ### MathUtils is a cross platform CC0 C++14 application & library for generating the dot product of `std::vector`.
 
+[![Run Tests](https://github.com/7thfleet/CMake_Example/actions/workflows/main.yml/badge.svg)](https://github.com/7thfleet/CMake_Example/actions/workflows/main.yml)
+
 # Table of Contents
 1. [Introduction](#introduction)
 2. [Dependencies](#dependencies)
