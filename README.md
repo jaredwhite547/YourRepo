@@ -11,6 +11,8 @@ There are a few bits of functionality missing from this project. This was done t
 
 @@TODO try these instructions and test them
 
+You may consider enabling -Werror for the CI.
+
 # How to use this example for a project with no driver/application (library only)
 1. Follow the previous instructions
 2. Delete/comment everything that references MathUtils-bin. 
@@ -29,6 +31,16 @@ If your app has, or will have a CLI interface that isn't dead simple, you probab
 
 The included formatting/IO library, {fmt}, is very good. The majority of is being standardized with later C++ versions, so it is hard to go wrong here.
 
-#Testing frameworks
-* This project uses doctest.@@TODO It is almost identical to catch2, but the compile and linking times are much much faster. Both are good choices
 
+
+# CMake_Example
+This project is a small example project showing how to 
+
+
+# Libraries Used
+* [doctest](https://github.com/onqtam/doctest/) is the testing library used here. It is similar to `catch2`, but compiles much faster.
+* [{fmt}](https://github.com/fmtlib/fmt)
+
+
+# License
+The **code** for this repository is CC0/public domain(The libraries used are only fetched during build times. This means the binaries are (probably, I'm not a lawyer) not CC0. Since this is an example project, and no binaries are being distributed, it doesn't matter. CC0/public domain means this code this completely free, you can do anything you want with it.
