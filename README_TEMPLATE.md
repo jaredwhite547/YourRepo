@@ -99,7 +99,7 @@ Will output `[1, 3, -5] DOT [4, -2, -1] = 3`
 
 <a name="license"></a>
 #License
-The **code** in this repository, as well as the file `CoolLogo.png` are licensed under CC0. Note that any distributed binaries or build trees may require a different license, as the two libraries fetched at build time ({fmt} and doctest) are both MIT-licensed. See [LICENSE.md](LICENSE.md).
+The **code** in this repository, as well as the file `CoolLogo.png` are licensed under CC0. Note that any distributed binaries or build trees may require a different license, as the two libraries fetched at build time ({fmt} and doctest) are both MIT-licensed. See [LICENSE](LICENSE).
 (@@TODO: The above is a bit more verbose than you need to be, since you'll likely be using a different license, like MIT).
 
 <a name="contributors"></a>

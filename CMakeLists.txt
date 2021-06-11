@@ -34,8 +34,9 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(fmt)
 message(STATUS "fmt successfully fetched.")
 
-#Make it a dependency of the executable (the MathUtils-bin target, not MathUtils)
+#Make it a dependency of the executable, and the library.
 target_link_libraries(MathUtils-bin PRIVATE fmt)
+target_link_libraries(MathUtils PRIVATE fmt)
 
 #Make MathUtils-bin (our driver) depend on our library (MathUtils)
 target_link_libraries(MathUtils-bin PRIVATE MathUtils)
