@@ -1,5 +1,5 @@
 # CMake Example
-This is a small project intended to serve as an example/template for CMake projects.
+This is a small project intended to serve as an example/template for CMake projects. It contains about 100 lines of CMake. Read below for instructions on how to use this template for your own project.
 
 # How to use this example for your own project.
 This example project is a short application. If you want to use this project as a base for a library only project (no executable), you will have to do more in-depth modifications. I have omitted them to keep this guide short.
@@ -26,6 +26,7 @@ If the library uses CMake, and uses it properly, you can use FetchContent, as sh
 * The default configuration has a fair amount of warnings enabled by default. You may wish to turn some off if you find them excessive.
 * You might consider enabling -Werror for the CI.
 * For a larger project, consider adding CI features like code coverage checking, input fuzzing, etc.
+* This project has both regular unit tests, and a CMake test that directly invokes the executable and checks its output. If you don't want this, look in the file tests/CMakeLists.txt for instructions.
 
 # Libraries Used
 * [doctest](https://github.com/onqtam/doctest/) is the testing library used here. It is similar to `catch2`, but compiles much faster.
